@@ -1,0 +1,60 @@
+
+.team
+{
+    text-align: center;
+    box-shadow:  10px 9px 4px;
+    width: 100%;
+    
+}
+.active
+{
+    width: 100%;
+   
+}
+.active img
+{
+    width: 100%;
+}
+.activation
+{
+   
+   margin-top: 70px;
+   width: 100%;
+   
+   
+
+}
+#grid
+{
+    display: grid;
+    grid-template-columns:  repeat(auto-fit,minmax(200px,1fr));
+    grid-column-gap: 275px;
+   
+}
+.gif
+{
+    width: 100%;
+    height: auto;
+    margin-top: 100px;
+    text-align: center;
+}
+.button
+{
+    text-align: center;
+    margin-top: 30px;
+   
+}
+.button button
+{
+    background-color: yellowgreen;
+    width: 20%;
+    height: 50px;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'Times New Roman', Times, serif;
+   box-shadow: black 1px 3px 5px 5px;
+}
+.button button a{
+    text-decoration: none;
+    color: black;
+}

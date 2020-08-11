@@ -1,0 +1,55 @@
+.main
+{
+    text-align: center;
+}
+#a1 img
+{
+width: 80%;
+height: 400px;
+margin-left: 130px;
+clear: both;
+}
+p{
+    text-align: center;
+}
+div p{
+    font-size: x-large;
+}
+
+.q1 img
+{
+ 
+    width: 23%;   
+    float: left;
+    height: 200px;
+    margin: 10px;
+}
+.lhr img{
+    width: 23%;
+    float: left;
+    height: 200px;
+    margin: 10px;
+}
+.footer
+{
+    background-color: black;
+    width: 20%;
+    height: 300px;
+    float: left;
+    
+}
+.foot{
+    background-color: black;
+    width: 80%;
+    height: 300px;
+    float: left;
+    text-align: center
+    
+}
+.foot ul li a
+{
+    color: white;
+}
+.footer ul li a{
+    color: white;
+}

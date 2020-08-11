@@ -1,0 +1,54 @@
+#img img{
+    width: 80%;
+    height: 400px;
+    
+}
+#img
+{
+    text-align: center;
+}
+
+#pak h1
+{
+    text-align: center;
+}
+#pak p{
+    text-align: center;
+}
+#pak p{
+    font-size: x-large;
+}
+.team
+{
+    text-align: center;
+    box-shadow: green 10px 9px 4px;
+    width: 100%;
+    
+}
+#grid
+{
+    display: grid;
+    grid-template-columns:  repeat(auto-fit,minmax(200px,1fr));
+    grid-column-gap: 250px;
+   
+}
+#button
+{
+    text-align: center;
+}
+#button button{
+    width: 200px;
+    height: 70px;
+    margin-top: 30px;
+    font-size: 30px;
+    background-color: green;
+    border-radius: 20px;
+    font-weight: 500;
+    font-family: fantasy;
+    
+}
+button a{
+    text-decoration: none;
+    color: black;
+
+}

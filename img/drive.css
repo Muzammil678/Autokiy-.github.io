@@ -1,0 +1,146 @@
+
+
+.t{
+    background-color:  yellow;
+    width: 95%;
+    height: 60vh;
+    font-family: cursive;
+    font-size: 25px;
+    color: black;
+    padding-left: 70px;
+    padding-top: 130px;
+
+}
+.box{
+    margin-left: 30px;
+}
+.box .x{
+    width: 60%;
+    height: 7vh;
+}
+.box h1{
+    font-size: 27px;
+    
+}
+.hk{
+    background-color: wheat;
+    color: black;
+    width: 45%;
+    height: 70vh;
+    float: right;
+    margin-right: 50px;
+    margin-top: -400px;
+    padding-right: -140px;
+    padding-left: -80px;
+    padding-top: 30px;
+    text-align: center;
+    
+}
+.hk button{
+    padding: 10px 110px 10px 110px;
+    background-color:yellow;
+    border-radius: 9px 9px 9px 9px ;
+    color: black;
+    font-size: 20px;
+    font-family: georgia;
+}
+button:hover{
+background-color:gold;
+color: black;
+box-shadow: 3px 3px 8px black;
+border: none;
+border-radius: 9px 9px 9px 9px ;
+}
+.heading{
+    font-size: 22px;
+    text-align: center;
+}
+.icons{
+    display: grid;
+    grid-template-columns: 430px 430px 430px;
+}
+.v {
+    background-image: url(img7.jpg);
+    width: 90%;
+    height: 60vh;
+}
+.ko{
+    font-family: cursive;
+
+}
+.u{
+    width: 80%;
+    height: 80vh;
+    background-color: white;
+    margin-top: -170px;
+    
+    
+}
+.u h1{
+    font-size: 40px;
+}
+.j{
+    display: grid;
+    grid-template-columns: 500px 500px  ;
+   
+}
+.b{
+    background-color: whitesmoke;
+    width: 99%;
+    height: 50vh;
+    padding-left: 20px;
+    padding-bottom: -50px;
+    font-family: cursive;
+
+}
+.b h1{
+    padding-left: 300px;
+    padding-top: 60px;    
+}
+.b button{
+    padding: 20px 80px 20px 80px;
+    margin-left: 500px;
+    font-family: cursive;
+    font-size: 20px;
+    background-color: gold;
+    box-shadow: 4px 4px 10px black;
+    border-radius: 9px 9px 9px 9px;
+}
+button a{
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
+}
+.b button:hover{
+    background-color: yellow;
+    box-shadow: 2px 2px 6px black;
+}
+.l h1{
+    font-size: 45px;
+    font-family: cursive;
+    margin-left: 20px;
+    text-align: center;
+}
+.l img{
+    float: right;
+    margin-right: 70px;
+    padding-top: -80px;
+}
+.pragraph{
+    margin-left: 50px;
+    font-size: 20px;
+    font-family: cursive;
+}
+.pg{
+    padding-left: 20px;
+    justify-content: space-around;
+    font-family: cursive;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 410px 410px 410px;
+}
+.hd{
+ text-align: center;
+ font-family: cursive; 
+ font-size: 25px;  
+}

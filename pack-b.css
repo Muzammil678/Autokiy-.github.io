@@ -1,0 +1,38 @@
+*{margin: 0;padding: 0;box-sizing: border-box;}
+
+#pak p
+{
+    font-size: 26px;
+    color: rgba(0,0,0,0.8);
+}
+#image
+{
+    width: 350px;
+    height: 250px;
+    margin-bottom: 30px;
+}
+#image:hover
+{
+    
+    transition: 0.5s;
+    opacity: 0.6;
+}
+#padd
+{
+    text-align: center;
+}
+#free
+{
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+#pack
+{
+    width: 300px;
+}
+#pack:hover
+{
+    opacity: 0.5;
+    transition: 0.5s;
+    cursor: pointer;
+}

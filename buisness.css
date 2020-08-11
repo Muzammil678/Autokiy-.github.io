@@ -1,0 +1,49 @@
+
+.feed
+{
+    margin-top: -200px;
+}
+#cost
+{
+    width: 100%;
+    background-color: white;
+     text-align: center;
+     margin-top: -200px;
+   
+     padding-top: 30px;
+
+}
+#cost img
+{
+    width: 60%;
+    min-width: 300px;
+}
+#thumb
+{
+    background-color: white;
+    width: 100%;
+    font-family: Arial;
+    margin-top: 100px;
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+#thumb button
+{
+    padding: 1rem 2rem 1rem 2rem ;
+    border-radius: 50px;
+    border: 1px solid green;
+    margin-left: 20px;
+    margin-top: 30px; 
+}
+#thumb button a
+{
+    color: black;
+}
+
+
+.-box
+{
+    width: 450px;
+    font-size: 20px;
+    margin-right: 20px;
+}

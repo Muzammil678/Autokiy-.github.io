@@ -1,0 +1,25 @@
+#img
+{
+    text-align: center;
+}
+body{
+    background-color: green;
+}
+.rides p{
+    font-size: xx-large;}
+    .button button{
+        width: 30%;
+        height: 50px;
+        background-color: greenyellow;
+        font-size: x-large;
+        
+    }
+    .button{
+text-align: center;
+    }
+    .button button a{
+        text-decoration: none;
+        color: black;
+    }
+      
+    

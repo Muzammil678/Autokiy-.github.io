@@ -1,0 +1,120 @@
+
+var googleUser = {};
+
+function onSignIn(googleUser) {
+
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+        localStorage.setItem("gmail_id", profile.getId());
+        localStorage.setItem("gmail_first_name", profile.getGivenName());
+        localStorage.setItem("gmail_last_name", profile.getFamilyName());
+        localStorage.setItem("gmail_profile_image", profile.getImageUrl());
+        localStorage.setItem("gmail_email", profile.getEmail());
+        localStorage.setItem("gmail_token", googleUser.getAuthResponse().id_token);
+        gmailTokenTested();
+
+
+}
+
+function signOut() {
+    if(typeof gapi.auth2 !=='undefined')
+    {
+        if(typeof gapi.auth2.getAuthInstance() !=="undefined")
+        {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+                console.log('User signed out.');
+            });
+        }
+    }
+}
+
+var startApp = function() {
+    gapi.load('auth2', function(){
+        // Retrieve the singleton for the GoogleAuth library and set up the client.
+        auth2 = gapi.auth2.init({
+            client_id: '65723861148-jj40n3m6ivvjorejkcbtllg0159sihvm.apps.googleusercontent.com',
+            cookiepolicy: 'single_host_origin',
+            // Request scopes in addition to 'profile' and 'email'
+            //scope: 'additional_scope'
+        });
+        attachSignin(document.getElementById('customBtn'));
+    });
+};
+
+function attachSignin(element) {
+
+    auth2.attachClickHandler(element, {},
+        function(googleUser) {
+
+                // Useful data for your client-side scripts:
+                var profile = googleUser.getBasicProfile();
+                localStorage.setItem("gmail_id", profile.getId());
+                localStorage.setItem("gmail_first_name", profile.getGivenName());
+                localStorage.setItem("gmail_last_name", profile.getFamilyName());
+                localStorage.setItem("gmail_profile_image", profile.getImageUrl());
+                localStorage.setItem("gmail_email", profile.getEmail());
+                localStorage.setItem("gmail_token", googleUser.getAuthResponse().id_token);
+                gmailTokenTested();
+
+
+        }, function(error) {
+            console.log(JSON.stringify(error, undefined, 2));
+        });
+
+}
+
+
+function renderButton() {
+    gapi.signin2.render('gmailcustom', {
+        'scope': 'profile email',
+        'width': 270,
+        'height': 35,
+        'longtitle': true,
+        'theme': 'light',
+        'onsuccess': onSignIn,
+    });
+    startApp();
+}
+
+
+function gmailTokenTested(){
+    document.getElementById('loading').style.display='block';
+    $.ajax({
+        method: "POST",
+        url:baseUrl + "check_user_data_on_google_login",
+        data: {
+            gmail_token: localStorage.getItem("gmail_token")
+        },
+        success: function (response) {
+            document.getElementById('loading').style.display='none';
+            if (typeof response === "string") {
+                response = JSON.parse(response)
+            }
+
+            if (response.status === 200) {
+                fbq('track', 'SignupViaGmail');
+                removeLogoutKey();
+                let userName=response.data.user_name;
+                let accessToken=response.data.access_token;
+                document.cookie ='user_name='+userName+';';
+                document.cookie ='access_token='+accessToken+';';
+                document.cookie=source.source+'='+source.gmSource+';';
+
+                window.location.href =baseFormUrl+'?access_token='+response.data.access_token+'&state='+false+'&phone_no='+''+'&'+source.source+'='+source.gmSource;
+            } else if (response.status === 202) {
+                fbq('track', 'SigninViaGmail');
+                removeLogoutKey();
+                //conditions for verify phone no.
+                window.location.href =navFormUrl+signIn+'?'+source.source+'='+source.gmSource;
+                phoneNo = null;
+                $('#phRow').show();
+                $("#otpRow").hide();
+            }
+
+        },
+        error: function(){
+            document.getElementById('loading').style.display='none';
+        }
+    });
+}

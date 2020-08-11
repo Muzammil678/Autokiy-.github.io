@@ -1,0 +1,239 @@
+
+let distance='';
+let duration='';
+let googleResponseObj={};
+googleResponseObj.pickUpLocation={};
+googleResponseObj.dropOffLocation={};
+/*********************************************** Show and hide div ***********************************/
+
+    $("#estimatorPriceDiv").hide();
+
+/*********************************************** MAP ************************************************/
+
+function initMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+        mapTypeControl: false,
+        center: {lat: 31.5204, lng: 74.3587},
+        zoom: 13
+    });
+
+    new AutocompleteDirectionsHandler(map);
+}
+
+/**
+ * @constructor
+ */
+function AutocompleteDirectionsHandler(map) {
+    this.map = map;
+    this.originPlaceId = null;
+    this.destinationPlaceId = null;
+    this.travelMode = 'WALKING';
+    this.directionsService = new google.maps.DirectionsService;
+    this.directionsDisplay = new google.maps.DirectionsRenderer;
+    this.directionsDisplay.setMap(map);
+
+    var originInput = document.getElementById('origin-input');
+    var destinationInput = document.getElementById('destination-input');
+    var modeSelector = 'DRIVING';
+
+    var originAutocomplete = new google.maps.places.Autocomplete(originInput);
+    // Specify just the place data fields that you need.
+    originAutocomplete.setFields(['place_id']);
+
+    var destinationAutocomplete =
+        new google.maps.places.Autocomplete(destinationInput);
+    // Specify just the place data fields that you need.
+    destinationAutocomplete.setFields(['place_id']);
+
+    this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
+    this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
+}
+
+// Sets a listener on a radio button to change the filter type on Places
+// Autocomplete.
+AutocompleteDirectionsHandler.prototype.setupClickListener = function(
+    id, mode) {
+    var radioButton = document.getElementById(id);
+    var me = this;
+
+    radioButton.addEventListener('click', function() {
+        me.travelMode = mode;
+        me.route();
+    });
+};
+
+AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function(
+    autocomplete, mode) {
+    var me = this;
+    autocomplete.bindTo('bounds', this.map);
+
+    autocomplete.addListener('place_changed', function() {
+        var place = autocomplete.getPlace();
+
+        if (!place.place_id) {
+            window.alert('Please select an option from the dropdown list.');
+            return;
+        }
+        if (mode === 'ORIG') {
+            me.originPlaceId = place.place_id;
+        } else {
+            me.destinationPlaceId = place.place_id;
+        }
+        me.route();
+    });
+};
+
+AutocompleteDirectionsHandler.prototype.route = function() {
+    if (!this.originPlaceId || !this.destinationPlaceId) {
+        return;
+    }
+    var me = this;
+
+    this.directionsService.route(
+        {
+            origin: {'placeId': this.originPlaceId},
+            destination: {'placeId': this.destinationPlaceId},
+            travelMode: this.travelMode
+        },
+        function(response, status) {
+            if (status === 'OK') {
+                 distance = parseFloat(response.routes[0].legs[0].distance.text.split(" ", 1));
+                 duration = parseFloat(response.routes[0].legs[0].duration.text.split(" ", 1));
+                googleResponseObj.pickUpLocation.lat=response.routes[0].legs[0].start_location.lat;
+                googleResponseObj.pickUpLocation.lng=response.routes[0].legs[0].start_location.lng;
+                googleResponseObj.dropOffLocation.lat=response.routes[0].legs[0].end_location.lat;
+                googleResponseObj.dropOffLocation.lng=response.routes[0].legs[0].end_location.lng;
+                me.directionsDisplay.setDirections(response);
+            } else {
+                window.alert('Directions request failed due to ' + status);
+            }
+        });
+};
+
+$('#mainForm').submit(function (e) {
+
+    const max_seats=4;
+    let daysOnPerWeek=parseInt($('#daysOnPerWeek').val());
+    let returnTripRequired=parseInt($('#returnTrip').val());
+    let queryUrl=baseUrl+"estimate_monthly_pooling_price";
+    let locationQueryUrl=baseUrl+'is_points_in_region';
+    let data={};
+    if (returnTripRequired === 0) {
+        data = {
+            departure: {
+                distance: distance,
+                duration: duration
+            },
+            return: {
+                valid: false
+            },
+            numWeekDays:daysOnPerWeek,
+            numSeats: max_seats
+        }
+    }
+    else if (returnTripRequired=== 1) {
+        data = {
+            departure: {
+                distance: distance,
+                duration: duration
+            },
+            return: {
+                valid: true,
+                distance: distance,
+                duration: duration
+            },
+            numWeekDays:daysOnPerWeek,
+            numSeats: max_seats
+        }
+
+    }
+
+
+    $.ajax({
+        type: "post",
+        url:locationQueryUrl,
+        data: {
+            latitude:googleResponseObj.pickUpLocation.lat,
+            longitude: googleResponseObj.pickUpLocation.lng
+        },
+     success: function (response) {
+            if(typeof response==='string')
+            {
+                response=JSON.parse(response);
+            }
+            if(response.status===200)
+            {
+                $.ajax({
+                    type: "post",
+                    url:locationQueryUrl,
+                    data: {
+                        latitude:googleResponseObj.dropOffLocation.lat,
+                        longitude: googleResponseObj.dropOffLocation.lng
+                    },
+                    success: function (response) {
+                        if(typeof response==='string')
+                        {
+                            response=JSON.parse(response);
+                        }
+                        if(response.status===200)
+                        {
+                            $.ajax({
+                                url: queryUrl,
+                                type: 'post',
+                                data: {
+                                    trip:data
+                                },
+                                success: function (response) {
+                                    if(typeof response==='string')
+                                    {
+                                        response=JSON.parse(response);
+                                    }
+
+                                    if(response.status===200)
+                                    {
+                                        let rickshawEstimator='';
+                                        let carEstimator='';
+                                        for (let i = 0; i < response.data.length; i++) {
+                                            if (response.data[i].vehicle === 'RICKSHAW') {
+                                                for (let k = 0; k < response.data[i].price.length; k++) {
+                                                    if (response.data[i].price[k].seats === 4) {
+                                                        rickshawEstimator = response.data[i].price[k];
+                                                    }
+                                                }
+                                            }
+                                            else if (response.data[i].vehicle === 'CAR') {
+                                                for (let k = 0; k < response.data[i].price.length; k++) {
+                                                    if (response.data[i].price[k].seats === 4) {
+                                                        carEstimator = response.data[i].price[k];
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        $("#estimatorPriceDiv").show();
+                                        document.getElementById("rickshawPriceSpan").innerHTML='<b>'+'PKR '+rickshawEstimator.min+' ~ '+rickshawEstimator.max+'</b>';
+                                        document.getElementById("carPriceSpan").innerHTML='<b>'+'PKR '+carEstimator.min+' ~ '+carEstimator.max+'</b>';
+                                    }
+                                }
+                            });
+                        }
+                        else if(response.status===400)
+                        {
+                            alert("Region is out side over covering area.");
+                            $("#origin-input").val("");
+                            $("#destination-input").val("");
+                            $("#estimatorPriceDiv").hide();
+                        }
+                    }
+                });
+            }
+            else if(response.status===400)
+            {
+                alert("Region is out side over covering area.");
+                $("#origin-input").val("");
+                $("#destination-input").val("");
+                $("#estimatorPriceDiv").hide();
+            }
+        }
+     });
+    e.preventDefault();
+});

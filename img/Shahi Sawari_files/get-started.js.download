@@ -1,0 +1,59 @@
+function getStarted(btn_name) {
+    fbq('track', btn_name);
+        let cookie = document.cookie.split(';');
+        let sourceVal;
+        for (let i = 0; i < cookie.length; i++) {
+
+            let chip = cookie[i],
+                entry = chip.split("="),
+                name = entry[0];
+            name =  name.replace(/\s+/g, '');
+            if (name === source.source) // source key exist
+            {
+                sourceVal = entry[1]; // get source key value
+            }
+        }
+
+
+        for (let i = 0; i < cookie.length; i++) {
+
+            let chip = cookie[i],
+                entry = chip.split("="),
+                name = entry[0];
+                name =  name.replace(/\s+/g, '');
+            if(name==='access_token')
+            {
+                if (entry[1] === '') // empty access token
+                {  removeLogoutKey();
+                    window.location.href =baseFormUrl+'?access_token='+entry[1]+'&state='+true+'&phone_no='+getPhoneNo()+'&'+source.source+'='+source.sourceVal;
+                    return
+                }
+                else { // access_token available
+                    removeLogoutKey();
+                    window.location.href =baseFormUrl+'?access_token='+entry[1]+'&state='+false+'&phone_no='+getPhoneNo()+'&'+source.source+'='+source.sourceVal;
+                    return
+                }
+
+            }
+        }
+        $("#exampleModalCenter").modal();
+        $("#otpRow").hide();
+        $("#phRow").show();
+}
+/**
+ * will return the phone no stored in cookies.
+ */
+
+getPhoneNo=()=>{
+    let cookie = document.cookie.split(';');
+
+    for (let i = 0; i < cookie.length; i++) {
+
+        let chip = cookie[i],
+            entry = chip.split("="),
+            name = entry[0];
+        if (name === 'phone_no') {
+            return entry[1];
+        }
+    }
+};

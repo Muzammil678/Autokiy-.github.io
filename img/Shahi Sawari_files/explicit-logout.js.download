@@ -1,0 +1,24 @@
+//
+// if (logoutKey === 'true') {
+//     localStorage.clear();
+//     $("#beforeLogin").show();
+//     $("#afterLogin").hide();
+//     signOut();
+//
+//     let cookie = document.cookie.split(';');
+//
+//     for (let i = 0; i < cookie.length; i++) {
+//
+//         let chip = cookie[i],
+//             entry = chip.split("="),
+//             name = entry[0];
+//
+//         document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+//
+//     }
+//     logoutMethod();
+//     window.location.href="http://192.168.75.57/shahisawariweb";
+//
+// }
+
+

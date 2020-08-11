@@ -1,0 +1,58 @@
+
+#senior
+{
+    width: 100%;
+    text-align: center;
+}
+#senior img{
+   
+    
+}
+H1
+{
+    text-align: center;
+    box-shadow:green 10PX 5PX 6PX 4PX;
+}
+#HEAD
+{
+    text-align: center;
+    font-size: 70PX;
+    text-shadow: black 10PX 5PX 8PX;
+    color: yellow;
+}
+
+#grid
+{
+    display: grid;
+    grid-template-columns:  repeat(auto-fit,minmax(200px,1fr));
+    grid-column-gap: 275px;
+   
+}
+.ACTIVATION IMG
+{
+width: 100%;
+}
+#rule p{
+font-size: 30px;
+margin: 30px;
+}
+#button
+{
+    text-align: center;
+}
+#button button{
+    width: 200px;
+    height: 70px;
+    margin-top: 30px;
+    font-size: 30px;
+    background-color: green;
+    border-radius: 20px;
+    font-weight: 500;
+    font-family: fantasy;
+    
+}
+button a{
+    text-decoration: none;
+    color: black;
+
+}

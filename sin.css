@@ -1,0 +1,117 @@
+
+.logo {
+  width: 70px;
+  text-align: center;
+  font-size: 20px;
+  margin: auto;
+  align-items: center;
+}
+header {
+  align-items: center;
+  background: whitesmoke;
+  display: grid;
+  grid-gap: 1rem;
+  padding: 1rem;
+  grid-template-columns: 1fr 5fr 1fr;
+}
+ul li a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  padding: 1rem;
+  font-size: 0.8rem;
+}
+header ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  max-width: 400px;
+  min-width: 250px;
+  margin: AUTO 0% auto auto;
+}
+.BUTTON {
+  border: 2px SOLID black;
+  text-align: center;
+  width: fit-content;
+  height: fit-content;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+
+  border-radius: 10%;}
+
+
+
+h1
+{color: black;
+padding-top: 20px;
+font-family:cursive;}
+.form
+{width: 350px;
+height: auto;
+position: absolute;
+text-align: center;
+top: 50%;
+color:black;
+left: 50%;
+transform: translate(-50%, -50%);
+background-color: whitesmoke;
+opacity: 0.8;
+box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.12), 3px 3px 4px rgba(0, 0, 0, 0.24);}
+
+
+.inp
+{width: 70%;
+
+padding: 10px 20px 10px 5px;
+border: none;
+border-bottom: 3px solid black;}
+.inp:hover
+{box-shadow: 5px 5px 3px black;}
+a
+{text-decoration:none;
+color:blue}
+
+button a{color: black;}
+
+input
+{
+border-bottom: 3px  greenyellow;}
+
+
+.form .btn
+{
+  padding: 5px 20px 5px 20px;
+  box-shadow: 4px 4px 4px brown;
+  border-radius: 3px;
+  font-weight: bold;
+  font-family: cursive;
+  border-bottom: 4px ;
+  background-color:yellow ;
+ 
+}
+
+.form .btnn
+{padding: 10px 20px 10px 20px;
+background-color:yellow;
+color: black;
+font-family: cursive;
+font-weight: bold;
+border-radius: 20px ;
+box-shadow: 3px 3px 4px black;
+}
+
+h4
+{padding-bottom: 20px;}
+
+.form .btnn:hover
+{box-shadow: none;
+
+}
+.form .btn:hover
+{box-shadow: none;
+
+}
+
+
+
+
+

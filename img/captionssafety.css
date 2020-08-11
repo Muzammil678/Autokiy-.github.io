@@ -1,0 +1,48 @@
+h1{
+    font-size: 53px;
+    padding-left: 220px;
+    
+
+}
+img{
+    width: 100%;
+    height: 300px;
+}
+.J{
+    margin-left: 200px;
+    margin-right: 200px;
+}
+.J ul{
+    color: gray;
+}
+.J h3{
+    font-size: 25px;
+}
+ul li{
+    list-style-type: square;
+    font-size: 19px;
+}
+.G{
+    text-align: center;
+    display:grid ;
+    grid-template-columns: 2fr 2fr;
+    margin-left: -50px ;
+    margin-right: 50px;
+    color: black;
+}
+.G h2{
+    margin-left: 60px;
+}
+.G a{
+    text-decoration: none;
+    list-style-type: none;
+    color: black;
+    font-size: 19px;
+}
+.G a:hover{
+    color: gold;
+}
+img{
+    width: 75%;
+    height: 78vh;
+}

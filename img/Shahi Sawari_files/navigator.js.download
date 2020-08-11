@@ -1,0 +1,55 @@
+/**
+ * will navigate to the profile page
+ */
+goToProfilePage=()=>{
+    window.location.href=navFormUrl+profilePage;
+};
+/**
+ * will navigate to the request page
+ */
+goToRequestPage=()=>{
+    window.location.href=navFormUrl+requestPage;
+};
+
+/**
+ * will logout the user when clicked on logout button.
+ */
+baseLogoutMethod=()=>{
+
+  if(localStorage.getItem('facebookKey')==='true')
+  {
+      fbLogout();
+  }
+    signOut();
+    logoutMethod();
+};
+
+// Facebook Pixel Event on Get Started Button Click
+function getStartedEvent() {
+    fbq('track', 'GetStartedButtonClicked');
+}
+
+// Facebook Pixel Event on Business Button Click
+function getBusinessEvent() {
+    fbq('track', 'BusinessButtonClicked');
+}
+
+// Facebook Pixel Event on Get Education Button Click
+function getEducationEvent() {
+    fbq('track', 'EducationButtonClicked');
+}
+
+// Facebook Pixel Event on Get FAQ Button Click
+function getFAQEvent() {
+    fbq('track', 'FAQsButtonClicked');
+}
+
+// Facebook Pixel Event on Get Contact no. Button Click
+function getContactNoEvent() {
+    fbq('track', 'ContactNoClicked');
+}
+
+// Facebook Pixel Event on Get SignupSignin Button Click
+function getSignUpSignInEvent() {
+    fbq('track', 'SignupSigninButtonClicked');
+}

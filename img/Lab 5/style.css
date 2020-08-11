@@ -1,0 +1,9 @@
+* {  background-color: skyblue;}
+#container
+{font-size: 20px;}
+.main
+{list-style-type: upper-roman;}
+.A {list-style-type:lower-alpha;}
+.C{list-style-type: circle;}
+.D{list-style-type: square;}
+.E{list-style-type: disc;}

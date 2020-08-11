@@ -1,0 +1,15 @@
+<svg id="baseline-arrow_right_alt-24px-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #2f9673;
+      }
+    </style>
+  </defs>
+  <path id="Path_1110" data-name="Path 1110" class="cls-1" d="M0,0H60V60H0Z"/>
+  <path id="Path_1111" data-name="Path 1111" class="cls-2" d="M32.7,16.163H4V21.6H32.7v8.163l9.534-10.884L32.7,8Z" transform="translate(6.884 11.116)"/>
+</svg>

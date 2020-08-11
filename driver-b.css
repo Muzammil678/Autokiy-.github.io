@@ -1,0 +1,28 @@
+
+.imagee img
+{
+    width: 100%;
+    max-width: 100%;
+    min-width: 400px;
+    height: 100%;
+    min-height: 300px;
+   position: relative;
+    margin-top: 100px;
+}
+#marg
+{
+    width: 80%;
+    min-width: 400px;
+    border-radius: 10px;
+    margin-top: -170px;
+    background-color: white;
+    position: relative;
+}
+#connn
+{
+    width: 100%;
+    text-align: center;
+    background-color: whitesmoke;
+    padding-top: 50px;
+   padding-bottom: 70px;
+}

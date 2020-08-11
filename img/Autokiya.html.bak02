@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Autokiya</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+ <!-- Latest compiled and minified CSS -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+ <!-- jQuery library -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  
+
+<!-- Start WOWSlider.com HEAD section -->
+	<link rel="stylesheet" type="text/css" href="engine1/style.css" media="screen" />
+	<style type="text/css">a#vlb{display:none}</style>
+	<script type="text/javascript" src="engine1/jquery.js"></script>
+<!-- End WOWSlider.com HEAD section -->
+
+
+
+<!-- Start WOWSlider.com HEAD section -->
+	<link rel="stylesheet" type="text/css" href="engine1/style.css" media="screen" />
+	<style type="text/css">a#vlb{display:none}</style>
+	<script type="text/javascript" src="engine1/jquery.js"></script>
+<!-- End WOWSlider.com HEAD section -->
+
+
+
+<!-- Start WOWSlider.com HEAD section -->
+	<link rel="stylesheet" type="text/css" href="engine2/style.css" media="screen" />
+	<style type="text/css">a#vlb{display:none}</style>
+	<script type="text/javascript" src="engine2/jquery.js"></script>
+<!-- End WOWSlider.com HEAD section -->
+
+
+
+<!-- Start WOWSlider.com HEAD section -->
+	<link rel="stylesheet" type="text/css" href="engine1/style.css" media="screen" />
+	<style type="text/css">a#vlb{display:none}</style>
+	<script type="text/javascript" src="engine1/jquery.js"></script>
+<!-- End WOWSlider.com HEAD section -->
+
+
+
+<!-- Start WOWSlider.com HEAD section -->
+	<link rel="stylesheet" type="text/css" href="engine2/style.css" media="screen" />
+	<style type="text/css">a#vlb{display:none}</style>
+	<script type="text/javascript" src="engine2/jquery.js"></script>
+<!-- End WOWSlider.com HEAD section -->
+
+
+
+<!-- Start WOWSlider.com HEAD section -->
+	<link rel="stylesheet" type="text/css" href="engine1/style.css" media="screen" />
+	<style type="text/css">a#vlb{display:none}</style>
+	<script type="text/javascript" src="engine1/jquery.js"></script>
+<!-- End WOWSlider.com HEAD section -->
+
+</head>
+<body>
+  <header>
+    <div class="dropdown">
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <img src="LogoSample_ByTailorBrands.jpg" alt="" class="logo">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Services <i class="far fa-caret-down"></i></a>
+                <ul>
+                    <li><a href="">some</a></li>
+                    <li><a href="">some</a></li>
+                    <li><a href="">some</a></li>
+                    <li><a href="">some</a></li>
+                </ul>
+            </li>
+                <li><a href="">Packages <i class="far fa-caret-down"></i></a>
+                <ul>
+                    <li><a href="">some</a></li>
+                    <li><a href="">some</a></li>
+                    <li><a href="">some</a></li>
+                    <li><a href="">some</a></li>
+                </ul>
+            </li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="">help</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <div class="head-img">
+         
+    </div>
+</header>
+
+             <div class="con-img"><h1>Welcome TO Autokiya</h1>
+                <h2>Monthly Pick and Drop Services
+                    <br>
+                 Rickshaws Made Affordable With Sharing</h2>
+                 <Button><a href="sin.html">GET START</a></Button> </div>  
+         <div id="services">
+           <div class="A"> 
+               <center> <h1>Service Features</h1></center>
+                 <h3>AUTO KIYA monthly pick and drop services are designed for daily commute to and from school, college and workplace while keeping convenience, safety and affordability in mind..</h3>
+           </div>
+           <div id="card">
+          <div class="box">
+            <img src="s1.png" alt="">
+            <h3>Pooled Rickshaws</h3>
+            <p>Share your ride with more people on your route and save more. Gender sensitive and safe with verified users.</p>
+          </div>    
+            <div class="box">
+              <img src="s2.png" alt="">
+              <h3>Safe and reliable</h3>
+              <p>Get the same trusted and verified driver daily who knows your route and timings for a hassle free and peaceful ride.</p>
+            </div>   
+            <div class="box">
+              <img src="s3.png" alt="">
+              <h3>Live Tracking and Updates</h3>
+              <p>Track your trips on the mobile app. Share your live location with loved ones for added safety.</p>
+            </div>   
+                 <div class="box">
+                    <img src="s4.png" alt="">
+                    <h3>Fixed monthly price, No surge</h3>
+                    <p>All-inclusive , fixed subscription amount per month with online payments. No surge price or hidden costs</p>
+                  </div>   
+                  <div class="box">
+                    <img src="s5.jpg" alt="">
+                    <h3>Door-to-door service daily</h3>
+                    <p>Book for a month and forget the hassle of daily bookings. Get picked up from your doorstep and drop back at the same time daily.</p>
+                  </div>   
+                  <div class="box">
+                    <img src="s6.png" alt="">
+                    <h3>Priority Support</h3>
+                    <p>Get help between 7 AM to 11 PM throughout the week over a call.</p>
+                  </div>   
+                </div>
+         </div>
+         
+<div></div>
+
+
+
+</body>
+
+</html>

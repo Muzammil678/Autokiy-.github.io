@@ -1,0 +1,47 @@
+
+/**
+ * below condition will let the mode to, toggle between dev and dep...!
+ */
+const development = false;
+let queryBaseUrl;
+
+if (development) {
+    queryBaseUrl = 'http://192.168.75.14:7808/';
+    formBaseUrl = 'http://192.168.75.57/live_server_form/';
+}
+else {
+    queryBaseUrl = 'https://es.shahisawari.co/';
+    formBaseUrl = 'https://app.shahisawari.pk/';
+}
+
+//base url is for back end api call url.
+const baseUrl = `${queryBaseUrl}`; // Server URL
+const baseUrlForm = `${formBaseUrl}`; // Form Base URL
+// url to land on the web form first page
+const baseFormUrl = `${baseUrlForm}#/page/landing`;
+// const baseFormUrl="http://localhost/live_server_form/#/page/landing";
+//url that has the direct link of the web form --> root url will be used after adding the page (profile or request)
+const navFormUrl = `${baseUrlForm}#/page/`;
+//const will be added in navFormUrl to navigate to that view.
+const profilePage = "profile_view";
+//const requestPage will be added in navFormUrl to navigate to that view.
+const requestPage = "request_status";
+//const sign up page will be added in navFromUrl to navigate to the view.
+const signIn = "verify_phone";
+//const logout will be used to configure logout mechanism, query param will be logout
+const logout = 'logout';
+//const source prop will be used in query string, will hold the value of the source in query string.
+//used to know from which login type user is going to web form.
+const source = {
+    source: 'source',
+    fbSource: 'fb',//fb is the value of the source const used in query string
+    gmSource: 'gm',//gm is the value of the source const used in query string
+    phSource: 'ph'//ph is the value of the source const used in query string
+};
+//default behaviour of login screen
+$("#beforeLogin").show();
+$("#afterLogin").hide();
+
+$('#copyRight').text(`\u00A9 ${new Date().getFullYear()} Shahi Sawari (Pvt.) LTD`);
+$(`.termsConditions`).attr("href", 'terms_and_conditions.html');
+$(`.privacyPolicy`).attr("href", 'privacy_policy.html');
